@@ -5,12 +5,12 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1 style="color: black;">Food and Treats</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table" style="width: 80%; margin: auto; background-color: rgba(255, 255, 255, 0.9);">
     <thead>
         <tr>
             <th>
@@ -58,3 +58,13 @@
 }
     </tbody>
 </table>
+<style>
+    body {
+        background-image: url('/Images/catfood.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        margin: 0;
+        font-family: 'Comic Sans MS', cursive;
+    }
+</style>

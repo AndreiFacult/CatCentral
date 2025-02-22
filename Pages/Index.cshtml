@@ -4,7 +4,28 @@
     ViewData["Title"] = "Home page";
 }
 
+<style>
+    body {
+        background-image: url('/Images/backcat.jpg'); /* Schimbă calea către imaginea ta */
+        background-size: cover; /* Acoperă tot spațiul disponibil */
+        background-position: center;
+        background-attachment: fixed; /* Imaginea rămâne fixă la scroll */
+        border-radius: 15px;
+        padding: 40px;
+        font-family: 'Comic Sans MS', cursive;
+    }
+
+    .text-center h1 {
+        color: #ff6347;
+    }
+
+    .text-center p {
+        color: #00FFFF;
+        padding-top: 20vh;
+    }
+</style>
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome to Cat Central</h1>
+    <p style="font-size: 1.5rem;">Cats are here to relax, so let's give them a wonderful day!</p>
 </div>
