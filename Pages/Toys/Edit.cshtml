@@ -1,0 +1,50 @@
+﻿@page
+@model CatCentral.Pages.Toys.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Toy</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Toy.ID" />
+            <div class="form-group">
+                <label asp-for="Toy.Name" class="control-label"></label>
+                <input asp-for="Toy.Name" class="form-control" />
+                <span asp-validation-for="Toy.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Toy.Size" class="control-label"></label>
+                <input asp-for="Toy.Size" class="form-control" />
+                <span asp-validation-for="Toy.Size" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Toy.Quantity" class="control-label"></label>
+                <input asp-for="Toy.Quantity" class="form-control" />
+                <span asp-validation-for="Toy.Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Toy.SpecialDescription" class="control-label"></label>
+                <input asp-for="Toy.SpecialDescription" class="form-control" />
+                <span asp-validation-for="Toy.SpecialDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
