@@ -7,10 +7,11 @@ namespace CatCentral.Models
     {
         public int ID { get; set; }
         public string Name { get; set; }
+        public ICollection<Groom>? grooms { get; set; }
         public string Owner { get; set; }
-        [Column(TypeName = "decimal(9, 0)")]
+        [DisplayFormat(DataFormatString = "{0:0}")]
         public decimal ImplantID { get; set; }
-        [Column(TypeName = "decimal(5, 0)")]
+        [DisplayFormat(DataFormatString = "{0:0}")]
         public decimal Age { get; set; }
         public string Breed { get; set; }
         [Display(Name = "Special Description")]

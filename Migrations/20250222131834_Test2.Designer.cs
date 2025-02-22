@@ -4,6 +4,7 @@ using CatCentral.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CatCentral.Migrations
 {
     [DbContext(typeof(CatCentralContext))]
-    partial class CatCentralContextModelSnapshot : ModelSnapshot
+    [Migration("20250222131834_Test2")]
+    partial class Test2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -103,8 +106,9 @@ namespace CatCentral.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("FoodID")
-                        .HasColumnType("int");
+                    b.Property<string>("Food")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("GallerysID")
                         .HasColumnType("int");
@@ -120,16 +124,13 @@ namespace CatCentral.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ToyID")
-                        .HasColumnType("int");
+                    b.Property<string>("Toys")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("FoodID");
-
                     b.HasIndex("GallerysID");
-
-                    b.HasIndex("ToyID");
 
                     b.ToTable("Grooming");
                 });
@@ -164,36 +165,14 @@ namespace CatCentral.Migrations
 
             modelBuilder.Entity("CatCentral.Models.Groom", b =>
                 {
-                    b.HasOne("CatCentral.Models.Food", "Food")
-                        .WithMany("grooms")
-                        .HasForeignKey("FoodID");
-
                     b.HasOne("CatCentral.Models.Gallerys", "Gallerys")
                         .WithMany("grooms")
                         .HasForeignKey("GallerysID");
 
-                    b.HasOne("CatCentral.Models.Toy", "Toy")
-                        .WithMany("grooms")
-                        .HasForeignKey("ToyID");
-
-                    b.Navigation("Food");
-
                     b.Navigation("Gallerys");
-
-                    b.Navigation("Toy");
-                });
-
-            modelBuilder.Entity("CatCentral.Models.Food", b =>
-                {
-                    b.Navigation("grooms");
                 });
 
             modelBuilder.Entity("CatCentral.Models.Gallerys", b =>
-                {
-                    b.Navigation("grooms");
-                });
-
-            modelBuilder.Entity("CatCentral.Models.Toy", b =>
                 {
                     b.Navigation("grooms");
                 });

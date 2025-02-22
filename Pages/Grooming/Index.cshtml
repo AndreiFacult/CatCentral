@@ -10,11 +10,34 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+<form method="get">
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <select asp-for="SearchField" class="form-control">
+                <option value="">-- Select Search Field --</option>
+                <option value="Name">Name</option>
+                <option value="Owner">Owner</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <input type="text" asp-for="SearchString" class="form-control" placeholder="Enter search term..." />
+        </div>
+        <div class="col-md-4">
+            <input type="date" asp-for="SearchDate" class="form-control" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <button type="submit" class="btn btn-primary">Search</button>
+            <a asp-page="./Index" class="btn btn-secondary">Clear</a>
+        </div>
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Groom[0].Name)
+                @Html.DisplayNameFor(model => model.Groom[0].GallerysID)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Groom[0].Owner)
@@ -23,13 +46,13 @@
                 @Html.DisplayNameFor(model => model.Groom[0].Description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Groom[0].Food)
+                @Html.DisplayNameFor(model => model.Groom[0].FoodID)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Groom[0].Supplies)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Groom[0].Toys)
+                @Html.DisplayNameFor(model => model.Groom[0].ToyID)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Groom[0].Price)
@@ -44,7 +67,7 @@
 @foreach (var item in Model.Groom) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.Gallerys.Name)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Owner)
@@ -53,13 +76,13 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Food)
+                @Html.DisplayFor(modelItem => item.Food.Name)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Supplies)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Toys)
+                @Html.DisplayFor(modelItem => item.Toy.Name)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Price)

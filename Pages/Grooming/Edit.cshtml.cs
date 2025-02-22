@@ -36,6 +36,9 @@ namespace CatCentral.Pages.Grooming
                 return NotFound();
             }
             Groom = groom;
+            ViewData["GallerysID"] = new SelectList(_context.Set<Gallerys>(), "ID", "Name");
+            ViewData["FoodID"] = new SelectList(_context.Set<Food>(), "ID", "Name");
+            ViewData["ToyID"] = new SelectList(_context.Set<Toy>(), "ID", "Name");
             return Page();
         }
 

@@ -7,8 +7,9 @@ namespace CatCentral.Models
     {
         public int ID { get; set; }
         public string Name { get; set; }
+        public ICollection<Groom>? grooms { get; set; }
         public string Brand { get; set; }
-        [Column(TypeName = "decimal(5, 0)")]
+        [DisplayFormat(DataFormatString = "{0:0}")]
         public decimal Quantity { get; set;}
         [Column(TypeName = "decimal(6, 2)")]
         public decimal Price { get; set; }

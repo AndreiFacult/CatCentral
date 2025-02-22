@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using CatCentral.Data;
 using CatCentral.Models;
+using System.Security.Policy;
 
 namespace CatCentral.Pages.Grooming
 {
@@ -21,6 +22,9 @@ namespace CatCentral.Pages.Grooming
 
         public IActionResult OnGet()
         {
+            ViewData["GallerysID"] = new SelectList(_context.Set<Gallerys>(), "ID","Name");
+            ViewData["FoodID"] = new SelectList(_context.Set<Food>(), "ID", "Name");
+            ViewData["ToyID"] = new SelectList(_context.Set<Toy>(), "ID", "Name");
             return Page();
         }
 

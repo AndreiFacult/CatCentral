@@ -14,9 +14,10 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Groom.Name" class="control-label"></label>
-                <input asp-for="Groom.Name" class="form-control" />
-                <span asp-validation-for="Groom.Name" class="text-danger"></span>
+                <label asp-for="Groom.GallerysID" class="control-label">Name</label>
+                <select asp-for="Groom.GallerysID" class="form-control" asp-items="ViewBag.GallerysID">
+                </select>
+                <span asp-validation-for="Groom.GallerysID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Groom.Owner" class="control-label"></label>
@@ -29,9 +30,10 @@
                 <span asp-validation-for="Groom.Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Groom.Food" class="control-label"></label>
-                <input asp-for="Groom.Food" class="form-control" />
-                <span asp-validation-for="Groom.Food" class="text-danger"></span>
+                <label asp-for="Groom.FoodID" class="control-label">Food</label>
+                <select asp-for="Groom.FoodID" class="form-control" asp-items="ViewBag.FoodID">
+                </select>
+                <span asp-validation-for="Groom.FoodID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Groom.Supplies" class="control-label"></label>
@@ -39,9 +41,10 @@
                 <span asp-validation-for="Groom.Supplies" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Groom.Toys" class="control-label"></label>
-                <input asp-for="Groom.Toys" class="form-control" />
-                <span asp-validation-for="Groom.Toys" class="text-danger"></span>
+                <label asp-for="Groom.ToyID" class="control-label">Toys</label>
+                <select asp-for="Groom.ToyID" class="form-control" asp-items="ViewBag.ToyID">
+                </select>
+                <span asp-validation-for="Groom.ToyID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Groom.Price" class="control-label"></label>
